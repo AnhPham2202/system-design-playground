@@ -1,4 +1,4 @@
-import { nodeTypeLabels } from '../nodes/nodeData';
+import { nodeTypeLabels } from '../../../abstract/nodeData';
 
 const sidebarItems = [
   { type: 'user', metric: 'Requests' },

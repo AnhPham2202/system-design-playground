@@ -10,6 +10,7 @@ import {
 import { initialEdges } from '../data/initialEdges';
 import { initialNodes } from '../data/initialNodes';
 import type { SystemNodeData } from '../types/playground.types';
+import { validateSystemConnection } from '../utils/connectionValidation';
 
 export function usePlaygroundFlow() {
   const [nodes, setNodes, onNodesChange] = useNodesState<SystemNodeData>(initialNodes);
@@ -17,9 +18,18 @@ export function usePlaygroundFlow() {
 
   const onConnect = useCallback(
     (connection: Connection) => {
+      if (!validateSystemConnection(connection, nodes).isValid) {
+        return;
+      }
+
       setEdges((currentEdges: Edge[]) => addEdge({ ...connection, animated: true }, currentEdges));
     },
-    [setEdges],
+    [nodes, setEdges],
+  );
+
+  const isValidConnection = useCallback(
+    (connection: Connection) => validateSystemConnection(connection, nodes).isValid,
+    [nodes],
   );
 
   const updateNodes = useCallback(
@@ -35,6 +45,7 @@ export function usePlaygroundFlow() {
     onNodesChange,
     onEdgesChange,
     onConnect,
+    isValidConnection,
     setNodes: updateNodes,
     setEdges,
   };

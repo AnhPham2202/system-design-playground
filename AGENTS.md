@@ -9,14 +9,14 @@
 - App entry: `src/main.tsx`
 - App shell: `src/app/App.tsx`
 - Global styles and CSS variables: `src/styles/globals.css`
+- Abstract and generic components/types/utilities: `src/abstract`
 - Tailwind config: `tailwind.config.ts`
 - Playground canvas: `src/features/playground/components/PlaygroundCanvas.tsx`
 - Flow state hook: `src/features/playground/hooks/usePlaygroundFlow.ts`
 - Initial nodes: `src/features/playground/data/initialNodes.ts`
 - Initial edges: `src/features/playground/data/initialEdges.ts`
 - Node data/types: `src/features/playground/types/playground.types.ts`
-- Node metadata: `src/features/playground/nodes/nodeData.ts`
-- Node registry: `src/features/playground/nodes/nodeTypes.ts`
+- 
 
 ## React Flow Notes
 

@@ -1,7 +1,7 @@
 import { Handle, Position, type NodeProps } from 'reactflow';
 import { cn } from '../../../lib/cn';
-import type { SystemNodeData } from './nodeData';
-import { nodeTypeLabels, statusClasses, statusLabels } from './nodeData';
+import type { SystemNodeData } from '../../../abstract/nodeData';
+import { nodeTypeLabels, statusClasses, statusLabels } from '../../../abstract/nodeData';
 
 type BaseContainerNodeProps = NodeProps<SystemNodeData> & {
   accentClassName?: string;
