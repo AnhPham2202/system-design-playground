@@ -14,11 +14,13 @@ export type MessagingKind = 'message_queue' | 'pub_sub' | 'stream';
 
 export type ComputeKind = 'application_server' | 'worker' | 'scheduled_job';
 
-export type EdgeKind = 'cdn' | 'load_balancer' | 'api_gateway';
+export type EdgeKind = 'load_balancer' | 'api_gateway';
+
+export type CacheKind = 'cdn' | 'cache';
 
 export type ClientKind = 'web_client' | 'mobile_client' | 'external_system';
 
-export type SystemNodeKind = DatabaseKind | MessagingKind | ComputeKind | EdgeKind | ClientKind;
+export type SystemNodeKind = DatabaseKind | MessagingKind | ComputeKind | EdgeKind | ClientKind | CacheKind;
 
 export type Capability =
   | 'emit_request'
